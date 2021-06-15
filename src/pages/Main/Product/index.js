@@ -1,16 +1,16 @@
 import React from 'react'
 import Navbar from '../../../components/Navbar'
 import Footer from '../../../components/Footer'
-import HomeJumbotron from '../../../part/Home/index'
+import AllProduct from '../../../part/Product/AllProduct'
 
-function Home() {
+function Product() {
   return (
     <div>
       <Navbar />
-      <HomeJumbotron />
+      <AllProduct />
       <Footer />
     </div>
   )
 }
 
-export default Home
+export default Product

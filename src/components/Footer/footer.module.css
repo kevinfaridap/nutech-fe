@@ -1,0 +1,11 @@
+div.footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding-top: 15px;
+  /* background-color: #3b56c4;
+  color: white; */
+  background-color: #eef2f5;
+  color: black;
+  font-family: 'Work Sans';
+}
