@@ -6,7 +6,7 @@ function Navbar() {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container">
-          <Link className="navbar-brand" to="/">Nu Tech Shop</Link>
+          <Link className="navbar-brand" to="/">NuTech Shop</Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -17,6 +17,9 @@ function Navbar() {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/product">Products</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/newproduct">New Product</Link>
               </li>
             </ul>
           </div>

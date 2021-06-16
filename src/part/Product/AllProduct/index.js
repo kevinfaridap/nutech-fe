@@ -2,8 +2,13 @@ import {useState, useEffect} from 'react'
 import style from './allproduct.module.css'
 import {jas} from '../../../assets/index'
 import axios from 'axios'
+import {useHistory} from 'react-router-dom'
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+
 
 function AllProduct() {
+  const history = useHistory()
   const [getProduct, setGetProduct] = useState([])
   const [page, setPage] = useState(1);
   const [by, setBy] = useState('productName');
@@ -14,7 +19,7 @@ function AllProduct() {
 
 
   useEffect(()=>{
-    axios.get(`http://localhost:8080/v1/product?page=${page}&limit=4&by=${by}&order=${order}&productName=${title.name}`)
+    axios.get(`${process.env.REACT_APP_API}/product?page=${page}&limit=4&by=${by}&order=${order}&productName=${title.name}`)
     .then((res)=>{
       const dataProduct = res.data
       setGetProduct(dataProduct)
@@ -22,6 +27,8 @@ function AllProduct() {
     .catch((err)=>{
       console.log(err);
     })
+
+    Aos.init({duration: 3000})
   }, [page, order, title.name])
 
   const getMapProduct = getProduct.data
@@ -48,6 +55,7 @@ function AllProduct() {
           <div className="col-4">
             <form className="form">
               <input 
+                data-aos="fade-left"
                 className={[["form-control"], ["mr-sm-2"], style["form-search"]].join(' ')} 
                 type="search" 
                 placeholder="Search Product Name" 
@@ -67,8 +75,9 @@ function AllProduct() {
                   <>
                     <div className="col-lg-3 col-6">
                       <div
+                        data-aos="fade-up"
                         className={style["card"]}
-                        // onClick={() => {history.push(`/product/${item.id}`);}}
+                        onClick={() => {history.push(`/product/${item.id}`);}}
                       >
                         <img
                           className={[["card-img-top"],style["product-img"],].join(" ")}
